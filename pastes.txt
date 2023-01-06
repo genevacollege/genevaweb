@@ -1,3 +1,0 @@
-Updated "more_link" headers to "mainlink"
-
-Updated grids and headers with "more_link" to "mainlink middlelg"
