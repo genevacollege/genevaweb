@@ -1,0 +1,121 @@
+<script>
+  var data;
+
+  function fetchData() {
+    const results = $.grep(data, function (n, i) {
+      return n.title
+        .toLowerCase()
+        .includes($('#program-preview-input input').val());
+    });
+
+    $('.program-preview-output li').remove();
+
+    results.forEach((p) => {
+      $('#program-preview-output').append(`
+        <li>
+          <a href="https://geneva.edu/"> Featured Program #1 </a>
+        </li>
+      `);
+    });
+  }
+
+  $(document).ready(() => {
+    fetch('https://www.geneva.edu/academics/programs/json/programs.json')
+      .then((res) => res.json())
+      .then((initialData) => {
+        data = initialData;
+      });
+
+    $('#program-preview-input input').keyup(function () {
+      fetchData();
+    });
+  });
+</script>
+
+<style>
+  #program-preview-container {
+    /* Dimensions */
+    width: 100%;
+    padding: 100px 0;
+    margin: 50px 0;
+
+    /* Colors */
+    background-color: #c99a2c;
+  }
+
+  #program-preview-margin {
+    /* Horizontal Centering */
+    margin: 0 auto;
+  }
+
+  #program-preview-input {
+    /* Colors */
+    background-color: #fff;
+
+    /* Border */
+    border: 5px solid #a57f25;
+    border-radius: 5px;
+
+    /* Flex */
+    display: flex;
+
+    /* Spacing */
+    padding: 5px;
+    box-sizing: border-box;
+  }
+
+  #program-preview-input input {
+    /* Border */
+    border: none;
+
+    /* Dimensions */
+    width: 100%;
+
+    /* Font */
+    color: #666;
+    font-size: 20px;
+
+    /* Spacing */
+    padding: 5px;
+  }
+
+  #program-preview-input input:focus {
+    /* Border */
+    outline: none;
+  }
+
+  #program-preview-output {
+    /* Format list */
+    list-style-type: none;
+    column-count: 2;
+  }
+</style>
+
+<div id="program-preview-container">
+  <div class="container">
+    <div id="program-preview-input">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input placeholder="Search programs..." type="text" />
+    </div>
+    <ul id="program-preview-output">
+      <li>
+        <a href="https://geneva.edu/"> Featured Program #1 </a>
+      </li>
+      <li>
+        <a href="https://geneva.edu/"> Featured Program #2 </a>
+      </li>
+      <li>
+        <a href="https://geneva.edu/"> Featured Program #3 </a>
+      </li>
+      <li>
+        <a href="https://geneva.edu/"> Featured Program #4 </a>
+      </li>
+      <li>
+        <a href="https://geneva.edu/"> Featured Program #5 </a>
+      </li>
+      <li>
+        <a href="https://geneva.edu/"> Featured Program #6 </a>
+      </li>
+    </ul>
+  </div>
+</div>

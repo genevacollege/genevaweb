@@ -1,0 +1,75 @@
+<div class="wide-container">
+  <div class="row">
+    <div class="twelve columns" style="margin-bottom: 25px; text-align: left">
+      <a
+        class="button grey"
+        href="https://www.geneva.edu/alumni/online-services/class-notes/submit"
+      >
+        <em aria-hidden="true" class="fa fa-plus">&#160;</em> Submit a Memoriam
+      </a>
+      <a
+        class="button grey"
+        href="https://www.geneva.edu/alumni/connect/alumni-update-form"
+      >
+        <em aria-hidden="true" class="fa fa-user">&#160;</em> Update Memoriam
+        Info
+      </a>
+      <a
+        class="button grey"
+        href="https://www.geneva.edu/alumni/online-services/class-notes/"
+      >
+        <em aria-hidden="true" class="fa fa-graduation-cap">&#160;</em> Go to
+        Class Notes
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="six columns">
+      <input
+        class="u-full-width"
+        id="filter-keyword"
+        name="filter-keyword"
+        placeholder="Search by keyword"
+        type="text"
+      />
+    </div>
+    <div class="six columns">
+      <form>
+        <select class="u-full-width" id="filter-classyear" name="classyear">
+          <option selected="selected" value="all">All Class Years</option>
+          <option value="2020">2020's</option>
+          <option value="2010">2010's</option>
+          <option value="2000">2000's</option>
+          <option value="1990">1990's</option>
+          <option value="1980">1980's</option>
+          <option value="1970">1970's</option>
+          <option value="1960">1960's</option>
+          <option value="1950">1950's</option>
+          <option value="1940">1940's</option>
+          <option value="1930">1930's</option>
+          <option value="1920">1920's</option>
+        </select>
+      </form>
+    </div>
+  </div>
+  <div class="row" style="margin: 10px 0 50px 0">
+    <div class="twelve columns">
+      <form style="display: flex">
+        <div id="view-alumni">
+          <input checked="checked" name="alumni" type="radio" />
+          <label for="alumni" style="margin-right: 10px">View alumni</label>
+        </div>
+        <div id="view-friends">
+          <input name="friends" type="radio" />
+          <label for="friends">View friends of Geneva</label>
+        </div>
+      </form>
+    </div>
+  </div>
+  <h2 id="results-title">All Class Years</h2>
+  <p id="results-disclaimer">
+    Results are sorted by date of death (most recent)
+  </p>
+  <div id="results-container"></div>
+  <div id="results-end"></div>
+</div>

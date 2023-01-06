@@ -1,0 +1,134 @@
+/* Blog Posts */
+
+#posts-feed {
+	display: grid;
+	grid-template-rows: auto;
+	gap: 25px;
+	padding: 0 20px;
+}
+
+#posts-feed a {
+	text-decoration: none;
+}
+
+#posts-feed ul.flex-container {
+	list-style-type: none;
+}
+
+.post {
+	padding-bottom: 1rem;
+	box-shadow: 0 1px 20px 0 rgb(0 0 0 / 20%);
+	/* flex-basis: 47.5%; */
+	position: relative;
+}
+
+.post .image {
+	background-position: center;
+	background-size: cover;
+	height: calc(1080px / 3.25 - 2rem);
+	margin: 1.5rem;
+}
+
+.post .body {
+	text-align: center;
+}
+
+.post .category {
+	color: #b4975b;
+	text-transform: uppercase;
+	font-size: 15px;
+	margin: 1.5rem 0;
+}
+
+.post .title {
+	margin: 1.5rem 0;
+}
+
+.post .title a {
+	font-size: 25px;
+	font-weight: 700;
+	color: black;
+}
+
+.post .summary {
+	font-size: 15px;
+	margin-bottom: 5rem;
+	color: #686868;
+	line-height: 25px;
+	padding: 0 1rem;
+}
+
+.post a.keep_reading {
+	position: absolute;
+	right: 1.25rem;
+	bottom: 1rem;
+}
+
+.post .date {
+	position: absolute;
+	left: 1.25rem;
+	bottom: 1rem;
+	color: darkgray;
+}
+
+/* Quote */
+
+#quote {
+	background: #fff
+		url("https://www.geneva.edu/alumni/represent/_assets/oldmain-windows.jpg")
+		no-repeat center center;
+	background-size: cover;
+	margin-top: 75px;
+}
+
+#quote-body {
+	color: #fff !important;
+	font-family: "Vollkorn";
+	font-style: italic;
+	text-align: center;
+	margin: 40px 0 !important;
+}
+
+#quote-body h3 {
+	font-weight: bold;
+	font-size: 17.5px;
+	line-height: 25px !important;
+}
+
+#quote-body cite {
+	font-size: 20px;
+	color: #ffd900;
+}
+
+/* Misc. Styles */
+
+#pageContentFull h1,
+#pageContentFull h2 {
+	color: #daaf48;
+}
+
+/* Media Queries / Mobile Responsive */
+
+/* Wider Than Mobile */
+@media (min-width: 550px) {
+	#posts-feed {
+		grid-template-columns: auto auto;
+	}
+
+	#quote-body h3 {
+		font-size: 28px;
+		line-height: 30px !important;
+	}
+}
+
+/* Wider Than Tablet */
+@media (min-width: 750px) {
+	/* #posts-feed {
+		grid-template-columns: auto auto auto;
+	} */
+
+	#quote-body h3 {
+		font-size: 35px;
+		line-height: 40px !important;
+	}
+}

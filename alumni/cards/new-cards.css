@@ -1,0 +1,84 @@
+/* New styles to be added onto the new branding */
+
+.flex-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+#main-flex-container {
+	content: "";
+	flex: auto;
+}
+
+.nb-card {
+	position: relative;
+	background-size: cover;
+	background-position: center;
+	box-shadow: 0 1px 3px 0 rgb(0 0 0 / 33%);
+	border-radius: 3px;
+	color: #333;
+	border: none;
+	margin-bottom: 1.7%;
+	height: 150px;
+	overflow: hidden;
+}
+
+.nb-card .nb-contrast {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.nb-card .nb-card-action {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	padding: 8px;
+	color: #3d3935;
+	background-color: #ffd900;
+}
+
+.nb-card .nb-card-link {
+	position: absolute;
+	display: block;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-indent: -9999px;
+	z-index: 10;
+}
+
+@media (min-width: 1024px) {
+	.nb-flex-item {
+		flex-basis: 24%;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+	.nb-flex-item {
+		flex-basis: 32%;
+	}
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+	.nb-flex-item {
+		flex-basis: 48%;
+	}
+}
+
+@media (max-width: 639px) {
+	.nb-flex-item {
+		flex-basis: 100%;
+	}
+}

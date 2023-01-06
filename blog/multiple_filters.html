@@ -1,0 +1,3258 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>
+			Multiple Filters - Responsive jQuery Grid Plugin | Media Boxes Portfolio
+		</title>
+
+		<link rel="icon" href="img/favicon.ico" type="image/png" />
+
+		<meta
+			name="description"
+			content="Make a grid with multiple filters at once." />
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+		<!-- needed for mobile devices -->
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+
+		<!-- Import font -->
+		<link
+			href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+			rel="stylesheet"
+			type="text/css" />
+		<link
+			href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
+			rel="stylesheet"
+			type="text/css" />
+
+		<!-- Style for Bootstrap -->
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+
+		<!-- Custom style for the demo-->
+		<link rel="stylesheet" href="css/demo.css" />
+
+		<!-- Media Boxes CSS files -->
+		<link
+			rel="stylesheet"
+			href="../plugins/components/Font Awesome/css/font-awesome.min.css" />
+		<link
+			rel="stylesheet"
+			href="../plugins/components/Magnific Popup/magnific-popup.css" />
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="../plugins/css/mediaBoxes.css" />
+
+		<style>
+			/* == LETS MODIFY SOME COLORS AND STYLE FOR THE DEMO == */
+
+			/*  The style of the text */
+			.thumbnail-overlay {
+				font-size: 35px;
+				color: white;
+			}
+
+			/* The different colors */
+			.red .thumbnail-overlay {
+				background: #e74c3c;
+			}
+			.green .thumbnail-overlay {
+				background: #00a78e;
+			}
+			.blue .thumbnail-overlay {
+				background: #4183c4;
+			}
+
+			/* The different shapes */
+			.round .media-box-container {
+				-webkit-border-radius: 50%;
+				-moz-border-radius: 50%;
+				border-radius: 50%;
+			}
+			.square .media-box-container {
+				-webkit-border-radius: 0%;
+				-moz-border-radius: 0%;
+				border-radius: 0%;
+			}
+
+			/* Position the filters */
+			.media-boxes-drop-down {
+				float: left;
+				margin-right: 10px;
+			}
+			.media-boxes-search {
+				float: right;
+			}
+
+			/* Hide the "no more entries" button */
+			.media-boxes-no-more-entries {
+				display: none;
+			}
+
+			/* Remove the shadow */
+			.media-box-container {
+				-webkit-box-shadow: none !important;
+				-moz-box-shadow: none !important;
+				-o-box-shadow: none !important;
+				-ms-box-shadow: none !important;
+				box-shadow: none !important;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="grid-section">
+			<div class="content grid-container">
+				<!--  ================== MEDIA BOXES ================== -->
+
+				<div class="filters-container">
+					<div class="media-boxes-search">
+						<span class="media-boxes-icon fa fa-search"></span>
+						<input type="text" id="search" placeholder="Search by title" />
+						<span class="media-boxes-clear fa fa-close"></span>
+					</div>
+
+					<div class="media-boxes-drop-down">
+						<div class="media-boxes-drop-down-header"></div>
+						<ul
+							class="media-boxes-drop-down-menu filters"
+							data-id="category-filter">
+							<li><a class="selected" href="#" data-filter="*">All</a></li>
+							<li>
+								<a href="#" data-filter=".adult-students">Adult Students</a>
+							</li>
+							<li>
+								<a href="#" data-filter=".college-admissions"
+									>College Admissions</a
+								>
+							</li>
+							<li><a href="#" data-filter=".campus-life">Campus Life</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div id="grid">
+					<div class="media-box college-admissions">
+						<div class="title">What To Expect At An Open House</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Tips To Make Your Dorm Room Work For You</div>
+					</div>
+					<div class="media-box higher-education">
+						<div class="title">Benefits of L&amp;T Class</div>
+					</div>
+					<div class="media-box college-preparation">
+						<div class="title">
+							How to Prepare for College with Geneva&apos;s Closing the Gap
+							Program
+						</div>
+					</div>
+					<div class="media-box college-preparation">
+						<div class="title">THE College Packing List</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">The Commuter Life</div>
+					</div>
+					<div class="media-box college-preparation">
+						<div class="title">Shopping for a Major</div>
+					</div>
+					<div class="media-box college-admissions">
+						<div class="title">What Is Welcome Week?</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Advice for Incoming First-Year Students</div>
+					</div>
+					<div class="media-box college-admissions">
+						<div class="title">Getting Ready for College</div>
+					</div>
+					<div class="media-box college-archives">
+						<div class="title">The Geneva Identity</div>
+					</div>
+					<div class="media-box college-admissions">
+						<div class="title">Junior Year Going on Senior Year</div>
+					</div>
+					<div class="media-box the-college">
+						<div class="title">Five Fun Facts About Geneva (Part 3)</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">Writer&#8217;s Block</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">Hymnology: Blessed Assurance</div>
+					</div>
+					<div class="media-box higher-education">
+						<div class="title">Geneva College Core Curriculum</div>
+					</div>
+					<div class="media-box college-admissions">
+						<div class="title">Summer Orientation</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">Dealing with Stress Biblically</div>
+					</div>
+					<div class="media-box study-abroad">
+						<div class="title">How I Ended Up in Ukraine</div>
+					</div>
+					<div class="media-box higher-education">
+						<div class="title">
+							Geneva Faculty Explore Implications Beyond the Classroom
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							Understanding &#8220;One Blood&#8221;: Geneva&#8217;s Approach to
+							Racial Reconciliation
+						</div>
+					</div>
+					<div class="media-box the-college">
+						<div class="title">
+							Dr. Kevin DeYoung Commencement Address, Geneva College, May 7,
+							2022
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							From Gold and White to NFL&#8217;s Black and Gold
+						</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">Standing Out as an Intern</div>
+					</div>
+					<div class="media-box college-preparation">
+						<div class="title">Three Things Not to Do in College</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">Trust This Season, Graduates</div>
+					</div>
+					<div class="media-box graduate-studies">
+						<div class="title">
+							5 Careers to Consider When You Earn Your Master&apos;s in
+							Leadership Studies
+						</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">
+							7 Fun Instagram Accounts Education Majors Should Follow
+						</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">
+							11 Fun Facts Proving the Sky is Not the Limit with an Engineering
+							Degree
+						</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">
+							Dispatches from Jerusalem: Major in Biblical Studies
+						</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">
+							7 Effective Ways to Stay Calm and Focused as a Nurse
+						</div>
+					</div>
+					<div class="media-box college-preparation">
+						<div class="title">
+							Three Things to Think About When Choosing a Major
+						</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">Dispatches from Jerusalem</div>
+					</div>
+					<div class="media-box graduate-studies">
+						<div class="title">
+							7 Podcasts Every MBA Student Should Find the Time to Listen To
+						</div>
+					</div>
+					<div class="media-box graduate-studies">
+						<div class="title">
+							Planning on Earning a Master&apos;s Degree in Counseling? Start
+							with a Biopsychology Undergrad Major
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">Absent Joy, Present God</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							Starting College as an Undeclared Major? 6 Things You Should Do
+							First
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							Brave and Afraid: Dealing with Fear of the Dark
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">So, You Want to Learn Another Language?</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">
+							Considering Biblical Studies? 7 Benefits of a Biblical Studies
+							Degree
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							Geneva Student Center Adds Accessibility Lift
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							Faithful Doubt: Habakkuk, a Review and Reflection
+						</div>
+					</div>
+					<div class="media-box graduate-studies">
+						<div class="title">
+							7 Inspiring Podcasts to Follow While Pursuing a Master&#8217;s in
+							Counseling
+						</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">
+							What Grade Level Should You Teach? Five Key Questions to Consider
+							When Making This Important Decision
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							Four Reasons Non-music Majors Should Consider Joining a Musical
+							Group at Geneva
+						</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">
+							7 &quot;Fly&quot; Jobs That Can Be Yours When You Earn Your Degree
+							in Aviation
+						</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">
+							Six Ideal Minors to Complement a Major in Communication
+						</div>
+					</div>
+					<div class="media-box graduate-studies">
+						<div class="title">
+							Should I go to Grad School? 3 Questions Hold the Answer
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							Top Five Most Popular Weekly Events on Campus
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							Find Great Internships with These 8 Questions
+						</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">
+							Five Strengths of Geneva&#8217;s New B.S. in Management
+						</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">5 Popular Career Paths for Biology Grads</div>
+					</div>
+					<div class="media-box graduate-studies">
+						<div class="title">
+							7 Great Reasons to Earn Your Master&apos;s Degree Online
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							10 Goals to Set Now for a Successful New Semester
+						</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">
+							5 Strategies You Can Use to Select the Right Engineering Major
+						</div>
+					</div>
+					<div class="media-box graduate-studies">
+						<div class="title">
+							7 Intriguing TV Shows to Stream as You Pursue Your Master&apos;s
+							in Counseling
+						</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">
+							6 Steps to Take When Choosing an Allied Health Major
+						</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">
+							5 Majors That Can Help Launch a Fun, High-Paying Career
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							4 Reasons Why You Should Consider Playing Rugby at Geneva
+						</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">Death of an Atheist</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">
+							Majoring in Marketing? 6 Minors to Shape Your Career Path
+						</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">
+							5 Reasons You Should Consider Earning a Degree in Actuarial
+							Mathematics
+						</div>
+					</div>
+					<div class="media-box graduate-studies">
+						<div class="title">
+							7 Amazing Reasons to Earn Your Master&#8217;s Degree at Geneva
+							College
+						</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">
+							5 Ways a Community Development Degree Can Help You Enhance Your
+							Community
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">Loving Thy Neighbor &#8211; Geneva Style</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">Top 5 Careers for Cybersecurity Majors</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">
+							The Most Exciting Benefits of Earning Your Sports Management
+							Degree
+						</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">
+							11 Reasons Why You&#8217;ll&#160;Love&#160;Being an Engineer
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">
+							Drive-thru Mindfulness: 4 Quick Ways to Improve Mental Health
+						</div>
+					</div>
+					<div class="media-box the-college">
+						<div class="title">
+							6 Smart Benefits of Doing a Double Major in College
+						</div>
+					</div>
+					<div class="media-box graduate-studies">
+						<div class="title">
+							7 Ways to Become Someone&#8217;s Hero with a Master&#8217;s Degree
+							in Counseling
+						</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">Top Five Remote Jobs</div>
+					</div>
+					<div class="media-box financial-aid">
+						<div class="title">Work Study&#8230; How Does it Work?</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">
+							7 Reasons Why Majoring in Education Is a Good Idea
+						</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">
+							11 Reasons Why You&#8217;ll Love Being a Nurse
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">Is It Okay to Be an Undeclared Major?</div>
+					</div>
+					<div class="media-box the-college">
+						<div class="title">
+							Covey Cup: A Recent Tradition at Geneva College
+						</div>
+					</div>
+					<div class="media-box graduate-studies">
+						<div class="title">
+							Beat Master&#8217;s Program Stress with these 10 Strategies
+						</div>
+					</div>
+					<div class="media-box college-preparation">
+						<div class="title">Homeschool to College</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							Hymnology: The Story Behind &#8220;Great Is Thy
+							Faithfulness&#8221;
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							11 Goals to Set This Fall for a Successful School Year
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Four Frightening Freshman Fears</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">
+							11 Reasons Why You Should Major in Social Services
+						</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">
+							11 Reasons Why Majoring in Criminal Justice Leads to a Fulfilling
+							Career That Matters
+						</div>
+					</div>
+					<div class="media-box graduate-studies">
+						<div class="title">
+							8 Benefits of Extracurricular Activities in Grad School
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">Keeping Your Summer Cool</div>
+					</div>
+					<div class="media-box the-college">
+						<div class="title">Geneva Strong: Class of 2020</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">&quot;Every Good Work&quot;</div>
+					</div>
+					<div class="media-box graduate-studies">
+						<div class="title">
+							Is It Better to Earn a Master&#8217;s Degree Online or In Person?
+						</div>
+					</div>
+					<div class="media-box college-admissions">
+						<div class="title">
+							7 Summer Activities to Spruce Up Your College Application
+						</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">
+							10 Amazing Benefits You Can Expect from Your Summer Internship
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">Cherishing the Light Within Darkness</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							7 Intriguing Books about Marketing to Keep You Sharp This Summer
+						</div>
+					</div>
+					<div class="media-box adult-students">
+						<div class="title">
+							Finishing Your Degree after Time Away from Education
+						</div>
+					</div>
+					<div class="media-box graduate-studies">
+						<div class="title">
+							Geneva College Online Cybersecurity Graduate Degree
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							4 Benefits of Being a Student-Athlete at Geneva College
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">Ways to Relax</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">It Is from the LORD that a Man Gets Justice</div>
+					</div>
+					<div class="media-box college-preparation">
+						<div class="title">
+							Eleven Things Every Student Should Know about Picking a Major
+						</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">
+							The Five Best Majors for Aspiring YouTube Stars
+						</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">
+							Creating an Independent Major at Geneva College
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							Hymnology: The Story Behind &#8220;Amazing Grace&#8221;
+						</div>
+					</div>
+					<div class="media-box graduate-studies">
+						<div class="title">
+							Learn More to Earn More ... and so Many Other Reasons to Pursue a
+							Master&#8217;s Degree
+						</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">
+							Making It in the Big Leagues: 9 Majors to Land a Job in
+							Professional Sports
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">Through the Lens of Perspective</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">Whoever Trusts in His Own Mind Is a Fool</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">
+							5 Fascinating Facts About Community Development You May Not Have
+							Known
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							7 Reasons Why Bible Study for College Students Can Help with
+							Better Grades
+						</div>
+					</div>
+					<div class="media-box graduate-studies">
+						<div class="title">
+							Why an Emphasis in Finance for Your MBA Is So Valuable: 5 Benefits
+							Students See
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">The Rest of Peace</div>
+					</div>
+					<div class="media-box higher-education">
+						<div class="title">
+							10 Great Benefits of Choosing a Major and a Minor in College
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Benefits of Renting</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">Guide to Fun in Beaver County: Part 2</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">Know Well the Condition of Your Flocks</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">
+							Why Majoring in Chemistry Today Can Make for a Successful Career
+							Tomorrow
+						</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">
+							8 Exciting Career Options for Communication Design Majors
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							Walk Where Jesus Walked: The Best of Israel Tour
+						</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">
+							Why an Internship Could Be the Key to Your Success After
+							Graduation
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Benefits of Dorm Life</div>
+					</div>
+					<div class="media-box graduate-studies">
+						<div class="title">
+							7 Surprising Career Doors Opened with a Master&apos;s in
+							Counseling
+						</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">Great Reasons to Be a Writing Major</div>
+					</div>
+					<div class="media-box college-preparation">
+						<div class="title">
+							5 Tips for Getting the Most Out of Early College Credits
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">Whoever Hates Disguises Himself</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							Justification by Grace Alone through Faith Alone
+						</div>
+					</div>
+					<div class="media-box graduate-studies">
+						<div class="title">
+							5 Reasons Why Cybersecurity Professionals Are in Demand (And Why
+							That Won&apos;t Change)
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">Equipped to Serve in Community</div>
+					</div>
+					<div class="media-box college-preparation">
+						<div class="title">
+							7 Things to Consider if You&#8217;re Thinking About Changing Your
+							Major
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							10 Reasons Why Being an RA Is a Great College Experience
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">How Do I Get It All Done?</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">
+							Where Can Your Degree in Public Relations Take You? Here Are 10
+							Careers to Consider
+						</div>
+					</div>
+					<div class="media-box college-admissions">
+						<div class="title">
+							Noyce Grant for Pre-service K-12 STEM Educators
+						</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">Pandemic Service Opportunities</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">Lessons for Leaders from Cain and Abel</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">100 Years of Engineering at Geneva College</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							Like a Muddied Spring or a Polluted Fountain
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">The First and The Last</div>
+					</div>
+					<div class="media-box graduate-studies">
+						<div class="title">
+							Think Outside the Box: 10 Exciting Jobs Outside of Business for
+							MBA Graduates
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">Just Mercy</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">
+							Flexible and Fun: Check Out the 7 Best Jobs for College Students
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							Best Technological Study Partners: 5+ Study Apps Every College
+							Student Should Use
+						</div>
+					</div>
+					<div class="media-box financial-aid">
+						<div class="title">
+							Honors Week: What to Expect from the Honors Program
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							7 Famous Heroes to Learn About During Black History Month
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">Whoever Gives an Honest Answer</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">
+							11 Rewarding Careers When You Have an Actuarial Mathematics Degree
+						</div>
+					</div>
+					<div class="media-box graduate-studies">
+						<div class="title">
+							9 Reasons Why 2021 Is the Perfect Year to get your Master&#8217;s
+							Degree
+						</div>
+					</div>
+					<div class="media-box college-preparation">
+						<div class="title">My Admissions Checklist: January</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							8 Ways to get Refocused After Coming Back from Holiday Break
+						</div>
+					</div>
+					<div class="media-box the-college">
+						<div class="title">Introducing the Geneva College Foundation</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							Top 10 New Year&apos;s Resolutions to Make for a Successful
+							College Semester
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							Geneva Campus Life Re-engineered during COVID-19
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							Best of 2020: The Responsibility of Stewardship
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">Give Me Your Heart</div>
+					</div>
+					<div class="media-box graduate-studies">
+						<div class="title">
+							10 Reasons Why Cybersecurity Professionals Love Their Jobs
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							Impactful Career Opportunities if you have a Degree in Biblical
+							Studies
+						</div>
+					</div>
+					<div class="media-box graduate-studies">
+						<div class="title">
+							How to Let Your Employer Know About Your Exciting Return to School
+							for Your Master&apos;s Degree
+						</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">
+							5 Ways To Make a Strong Entrance into the Workforce as a New
+							Graduate
+						</div>
+					</div>
+					<div class="media-box the-college">
+						<div class="title">Why Transfer to Geneva College?</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							From Dining Room to Lecture Hall: Transitioning from Homeschool to
+							College
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">Be Not One of Those Who Give Pledges</div>
+					</div>
+					<div class="media-box graduate-studies">
+						<div class="title">
+							6 Exciting Careers Opened with a Master&apos;s in Higher Education
+						</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">
+							5 Reasons Why Psychology is a Great Starting Point for a
+							Fascinating Career in Social Media
+						</div>
+					</div>
+					<div class="media-box graduate-studies">
+						<div class="title">Engineers Make the World Go Round</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							15 Winning Ideas for Social Distancing Campus Activities in
+							College
+						</div>
+					</div>
+					<div class="media-box the-college">
+						<div class="title">What Every Geneva Commuter Should Know</div>
+					</div>
+					<div class="media-box higher-education">
+						<div class="title">
+							Support Breeds Success: Geneva Resources for Students
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">The Desire of the Sluggard Kills Him</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							Pet or No Pet? What&apos;s the Right Choice for Your College
+							Years?
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							The Secret to Choosing Intramurals and Avoiding the Freshman 15
+						</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">
+							5 Tips for Stronger Faith while Facing Times of Crisis
+						</div>
+					</div>
+					<div class="media-box college-admissions">
+						<div class="title">
+							Nothing to Fear: Why Transferring Colleges Is Perfectly Normal
+						</div>
+					</div>
+					<div class="media-box graduate-studies">
+						<div class="title">
+							How to Thrive in Grad School and Work: 6 Tips for Finding Balance
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Geneva Student Marches for the Fallen</div>
+					</div>
+					<div class="media-box the-college">
+						<div class="title">Home for Homecoming</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">A Wise King Winnows the Wicked</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							Navigating School and Social Life On-Campus during COVID-19
+						</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">What Jobs Will Never Go Away?</div>
+					</div>
+					<div class="media-box higher-education">
+						<div class="title">
+							Embracing Educational Benefits: Why is Education Important?
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Campus Opportunities</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Avoiding College Chaos</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							What to Expect on Your First Day of College:&#160;How to Prepare
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">A Son Who Brings Shame and Reproach</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">
+							Compelling Reasons to Pursue Your Bachelor of Science in
+							Management
+						</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">
+							Nursing vs Allied Health: Which Field Is Right for You?
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Back to School Packing: 6 Things to Bring</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">Far Greater Than Six Feet</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">
+							Celebrating National Aviation Day: Why We Honor the Nation&apos;s
+							Loftiest Professions
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">
+							Recipes I&#8217;ve Tried During COVID-19 Quarantine
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">To Fine the Righteous Is Not Good</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">
+							The Power of Friends: Why You Should Make an Effort on
+							International Day of Friendship
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							The Best College Books to Help You Survive&#8212;and
+							Thrive&#8212;as a Freshman
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">How to Save Energy in Summertime</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">
+							Thinking God&#8217;s Thoughts After Him: Christians Can Believe In
+							and Teach Science
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">The COVID-19 Disruption</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">Five Ways to Beat the Heat</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">A Worker&apos;s Appetite Works for Him</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">How to Spend Fourth of July</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">
+							Freedom vs. Responsibility: How to Master College&apos;s Greatest
+							Juggling Act
+						</div>
+					</div>
+					<div class="media-box early-college">
+						<div class="title">
+							The Happiest Majors and Careers: How to Choose a Path That Puts a
+							Smile on Your Face
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">Thankful 365 Days a Year for Mom and Dad</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">
+							10 Ways College Students Can Put Some Sizzle in Summer Vacation
+						</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">&#160;How to Find Security in Cybersecurity</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">Defeat Anger with Stop, Drop and Roll</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">Gracious words are pure</div>
+					</div>
+					<div class="media-box college-archives">
+						<div class="title">
+							Meet Kae Kirkwood Geneva&apos;s Archival Librarian
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">Home for Memorial Day</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">Trusting God Even When It Hurts</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">
+							National Day of Prayer: Thankful for Our Students
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							In the fear of the LORD one has strong confidence
+						</div>
+					</div>
+					<div class="media-box higher-education">
+						<div class="title">Supporting Your Student during Finals Week</div>
+					</div>
+					<div class="media-box higher-education">
+						<div class="title">
+							10 Great Reasons Why You Should Consider Taking Summer School
+							Courses
+						</div>
+					</div>
+					<div class="media-box higher-education">
+						<div class="title">Online vs Remote Learning</div>
+					</div>
+					<div class="media-box higher-education">
+						<div class="title">Top Tips for Successful Students</div>
+					</div>
+					<div class="media-box higher-education">
+						<div class="title">
+							7 Tips for Students Transitioning to Online Learning
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							One who is righteous is a guide to his neighbor
+						</div>
+					</div>
+					<div class="media-box higher-education">
+						<div class="title">A Fool&#8217;s Errand?</div>
+					</div>
+					<div class="media-box college-preparation">
+						<div class="title">
+							How an Honors Program Can Transform Your College Experience
+						</div>
+					</div>
+					<div class="media-box college-admissions">
+						<div class="title">
+							How to Score a Spot at Your Dream School with the Ultimate
+							Transfer Application
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">
+							Women&apos;s History Month: Celebrating Female Empowerment
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							Four Reasons to Get Involved in College Student Government
+						</div>
+					</div>
+					<div class="media-box financial-aid">
+						<div class="title">
+							How Geneva College Makes Obtaining a Degree Affordable
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							Proverbs 11:26 &#8211; The people curse him who holds back
+							grain...
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">Things to Do on Leap Day</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">
+							Developing the Fruits of the Spirit Through the Service of Others
+						</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">Preparing Yourself to Design a Better World</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">Making a Career Out of the Study of Life</div>
+					</div>
+					<div class="media-box college-preparation">
+						<div class="title">Why You Should Go To a College Open House</div>
+					</div>
+					<div class="media-box college-admissions">
+						<div class="title">Five Famous Geneva Alumni</div>
+					</div>
+					<div class="media-box college-preparation">
+						<div class="title">The Value of Dual Enrollment Programs</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">
+							For KING and COUNTRY Facedown Fear with Faith
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							Proverbs 10:26 - Like vinegar to the teeth and smoke to the
+							eyes...
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							How to Use Your Enneagram to Be a Better Student
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">The Magic Formula for Dealing with SUD</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Guide to Fun in Beaver County</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							Five tips for getting along with your roommates
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">Taking the High Road</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">
+							Prepare to Make History&#8212;Be One of the First to Graduate with
+							a BSN at Geneva
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							Student Ministry Students Vie for Coveted Silver Ladle
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Establishing Healthy, Productive Routines</div>
+					</div>
+					<div class="media-box college-admissions">
+						<div class="title">
+							When to Apply For College: Key Considerations to Keep in Mind As
+							You Seek a Spot at Your Top School
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Marching into a Music Scholarship</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">
+							What Does It Mean to Go to a Christian College?
+						</div>
+					</div>
+					<div class="media-box financial-aid">
+						<div class="title">Top 5 Financial Aid Myths Debunked</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">Visit to a Caring Place</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">Fall Semester Fatigue: Finishing Strong</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">
+							Protecting Valuable Assets: You and Your Data
+						</div>
+					</div>
+					<div class="media-box the-college">
+						<div class="title">Who is Gerstner?</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">
+							Six Radical Self-Care Strategies To Help You Survive the Holiday
+							Season
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							Being recruited by college coaches &#8211; What do I need to know?
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							How About Some Not-So-Random Acts on World Kindness Day?
+						</div>
+					</div>
+					<div class="media-box financial-aid">
+						<div class="title">5 Common FAFSA Mistakes</div>
+					</div>
+					<div class="media-box the-college">
+						<div class="title">For Christ and Country</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">By justice a king builds up the land</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">
+							Program Spotlight: Career Opportunities in Community Development
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">Treating Mental Illness with Compassion</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">Those who forsake the law praise the wicked</div>
+					</div>
+					<div class="media-box college-admissions">
+						<div class="title">Taking the First Steps with Closing the Gap</div>
+					</div>
+					<div class="media-box financial-aid">
+						<div class="title">You Got This! The FAFSA Process</div>
+					</div>
+					<div class="media-box the-college">
+						<div class="title">Homecoming for All</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">
+							Alternatives to Nursing: Degree Programs and Career Opportunities
+							that Fulfill Your Passion for Healthcare
+						</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">
+							A Christian &#8220;Elevator Speech&#8221; for Today
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">Impacting Lives Through Encouragement</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">Who can stand before jealousy?</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">
+							Program spotlight: How a career in Actuarial Mathematics can help
+							you build your future
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">The Minimal Back-to-School Packing List</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">
+							&#160;Enjoy a Career Bringing Others Out of the Isolation of
+							Communication Disorders&#160;
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							Five Things to Do before Leaving for College
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">Escape in the Pages of a Good Book</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">The Beauty and Blessings of Commuting</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">On Limbo and Leaving Childhood</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">Answer not a fool according to his folly...</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">World Friendship Day!</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">
+							The Sky&#8217;s the Limit for a Career in Finance
+						</div>
+					</div>
+					<div class="media-box the-college">
+						<div class="title">
+							Did You Know? Five Fun Facts About Geneva&#8217;s History (Part 2)
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">
+							Does Purity Matter Today? Why Teens Still See the Importance of
+							Purity
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">
+							Integrating Your Christian Faith Into Your Business Life
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">Just Look &amp; See What is Good</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">Enjoy Every Moment of Summer</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							Proverbs 25:4-5 - Take away the dross from the silver...
+						</div>
+					</div>
+					<div class="media-box college-preparation">
+						<div class="title">5 Benefits of Early College</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">Giving the Gift of Life</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">Fathers&apos; Day with Your Heavenly Father</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							Proverbs 24:3-4 &#8211; By wisdom a house is built...
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">
+							Summertime Faith: How to Live for Christ This Summer
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">
+							10 Ways to Ensure Summer Downtime isn&apos;t Brain-Dulling Time
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">Graduation: Now What?</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">
+							How Nurses Follow Christ&apos;s Call to Care For One Another
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">The Future: A Graduation Poem</div>
+					</div>
+					<div class="media-box higher-education">
+						<div class="title">Combatting Finals Week</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							Proverbs 23:4-5 &#8211; Do not toil to acquire wealth...
+						</div>
+					</div>
+					<div class="media-box the-college">
+						<div class="title">Quest Trip: Serving in Memphis</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">
+							Easter Reflections: How to Honor Christ Throughout the Year
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">
+							6 Smart Ways to Prepare for Finals That Don&apos;t Involve
+							Studying
+						</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">
+							What is the Difference Between a Graphic Designer and Web Designer
+							Anyway?
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							Geneva Core Values: Foster Academic Strength
+						</div>
+					</div>
+					<div class="media-box higher-education">
+						<div class="title">
+							A Year of Celebration in the English Department
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							Proverbs 22:4 &#8211; The reward for humility and fear of the
+							LORD...
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							Singing the Praises of Women in Christian Music
+						</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">
+							Program Spotlight: How Geneva&apos;s Communication Disorders
+							(Speech Pathology) Program Prepares Students to Reflect the
+							Compassion of Jesus
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">Be a Blogging Mega-Influencer for Christ</div>
+					</div>
+					<div class="media-box the-college">
+						<div class="title">Welcome Pi(e) Day</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							On International Women&#8217;s Day, We Celebrate Women Who are
+							Willing to Serve
+						</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">
+							How God Moved Big Daddy Weave Closer to Their Fans
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">
+							Winter Blues: Spiritual Spring Semester Slump
+						</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">
+							On Cancer and Community: The &quot;Almost&quot; Solo Battle of
+							Casting Crowns&apos; Mark Hall
+						</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">
+							How to Maintain Your Faith in a Seemingly Faithless World
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							Proverbs 21:4 &#8211; A haughty look, a proud heart...
+						</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">
+							Linking College and Real-World Experiences: How to Set Yourself Up
+							for Success Outside of the Classroom
+						</div>
+					</div>
+					<div class="media-box the-college">
+						<div class="title">A Foundation for a Right to Education</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">
+							Program Spotlight: Discovering the Many Niches and Opportunities
+							in Engineering
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							Balancing the Scales on Feb. 20, World Day of Social Justice
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">What Does Biblical Kindness Look Like?</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">
+							Don&apos;t Hate on Valentine&apos;s Day... Create!
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							Geneva Core Values: Inspire Vibrant Hospitality
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							Discovering the Soul of Leadership at Geneva College
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							Proverbs 20:4 &#8211; The sluggard does not plow in the autumn . .
+							.
+						</div>
+					</div>
+					<div class="media-box study-abroad">
+						<div class="title">
+							Broaden Your Summer Horizons by Studying Abroad
+						</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">
+							Program Spotlight: How Geneva College Equips Aspiring Educators
+							for Success in a Demanding and Rewarding Field
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							The Harlem Globetrotters: Uniting a Divided World
+						</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">New Year&apos;s Plans for Your Business</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							Martin Luther King Jr.&apos;s Dream in 2019: How Christians Can
+							Draw Inspiration from MLK&apos;s Faith
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">A Fantasy Friendship: Tolkien and Lewis</div>
+					</div>
+					<div class="media-box the-college">
+						<div class="title">Geneva Core Values: Honor One Another</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Jump In: Start Your Semester Off Right</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">The Promise</div>
+					</div>
+					<div class="media-box college-admissions">
+						<div class="title">Hottest Majors in 2019</div>
+					</div>
+					<div class="media-box the-college">
+						<div class="title">The Car with the Rumble Seat</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							Proverbs 19:4 -- Wealth makes many friends...
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">
+							Making Resolutions That Stick in the New Year
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							The Stigma Around Mental Illness for Christians
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Finishing the Race</div>
+					</div>
+					<div class="media-box the-college">
+						<div class="title">Geneva Core Values: Pursue Godly Wisdom</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">
+							What Can You Do With a Communication Degree?
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							Proverbs 18:4 &#8211; The words of a man&#8217;s mouth are deep
+							waters...
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">The Double-Edged Sword of Social Media</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">Give Thanks in All Circumstances</div>
+					</div>
+					<div class="media-box the-college">
+						<div class="title">
+							Geneva Core Values: Engage Culture Faithfully
+						</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">Busting Some Special Education Myths</div>
+					</div>
+					<div class="media-box the-college">
+						<div class="title">Honoring Veterans of the Armed Forces</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">
+							The Pacific Ocean Is a Dump, Geneva and the Au Sable Institute Can
+							Help
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">Chilling Out on Stress Awareness Day</div>
+					</div>
+					<div class="media-box higher-education">
+						<div class="title">Thinking of Changing Your Major?</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							Proverbs 17:4 &#8211; &quot;An evildoer listens to wicked
+							lips...&quot;
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">Say &quot;Boo-Bye&quot; to Fear</div>
+					</div>
+					<div class="media-box the-college">
+						<div class="title">Geneva Core Values: Serve with Grace</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">
+							Promoting STEM Careers with Science, Technology, Engineering &amp;
+							Math Day at Geneva
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">Refining Our Rants</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">
+							Geneva Program Spotlight: Department of Communication&#160;
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">
+							Lending Your Hand to Lift Others Up on World Homeless Day
+						</div>
+					</div>
+					<div class="media-box the-college">
+						<div class="title">Welcome Home!</div>
+					</div>
+					<div class="media-box the-college">
+						<div class="title">Hitchhiking: Summer 1930</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							Mastering the Art of the College Paper: Tips and Tricks
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							Proverbs 16:4 &#8211; &#8220;The LORD has made everything for its
+							purpose...&quot;
+						</div>
+					</div>
+					<div class="media-box continuing-education">
+						<div class="title">
+							Social Engineering: Targeting Human Weakness in a Digital World
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">In Everything Give Thanks</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">My Time with the Oglala Lakota People</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							Living with Roommates: Tips for Thriving in a Shared Space
+						</div>
+					</div>
+					<div class="media-box the-college">
+						<div class="title">Geneva College and The Psalms</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">
+							Come to Me &#8212; A Message for Suicide Prevention Month
+						</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">A Lowly Position, A High Calling</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							Proverbs 15:4 &#8211; &#8220;A gentle tongue is a tree of life...
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Recipes for edible magic</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">Program Spotlight: Is Marketing for You?</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">Prepare for a Career Flying UAVs</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">9 Reasons to Get Involved on Campus</div>
+					</div>
+					<div class="media-box college-preparation">
+						<div class="title">5 Ways to Make the Most of This School Year</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Looking Back</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Three Tips for First Year Students</div>
+					</div>
+					<div class="media-box college-admissions">
+						<div class="title">How to Conduct a College Search</div>
+					</div>
+					<div class="media-box college-preparation">
+						<div class="title">Five Ways to Manage a Long Research Paper</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">Where no oxen are, the trough is clean...</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">
+							Forging Supportive College Connections on International Day of
+							Friendship
+						</div>
+					</div>
+					<div class="media-box college-preparation">
+						<div class="title">Variety and Effective Studying</div>
+					</div>
+					<div class="media-box early-college">
+						<div class="title">
+							Pursuing an Independent Major: When Forging Your Own Path Is the
+							Best Option
+						</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">Training in Our Spiritual Lives</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">
+							Geneva&apos;s Nursing Program: Preparing for a Rewarding Career as
+							a Registered Nurse
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">Three Crucial Communication Classes</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">
+							10 Ways to Use Your B.A. in Biblical Studies Outside of the Church
+						</div>
+					</div>
+					<div class="media-box the-college">
+						<div class="title">Why I Come Back to Geneva Each Year</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							The soul of the lazy man desires, and has nothing...
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							Unity in Christ: Loving One Another, Despite Our Differences
+						</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">
+							Five Strengths about Geneva&#8217;s New B.S. in Marketing
+						</div>
+					</div>
+					<div class="media-box adult-students">
+						<div class="title">Beaver Falls Foodie</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							Fun Facts About Fathers and Their Special Day
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">
+							Share the Gift of Life on World Blood Donor Day
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">Understanding the Opioid Epidemic</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">
+							Saving Energy and Money in Your First Apartment
+						</div>
+					</div>
+					<div class="media-box the-college">
+						<div class="title">Why Do Geneva Students Do So Well?</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							An excellent wife is the crown of her husband...
+						</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">
+							Program Spotlight: How an M.S. in Cybersecurity Can Improve Your
+							Career Prospects
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							How Social Media Influencers Are Revolutionizing Marketing
+						</div>
+					</div>
+					<div class="media-box continuing-education">
+						<div class="title">
+							Four Great Reasons to Consider Summer Courses
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							Get Educated and Involved on Fibromyalgia Awareness Day
+						</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">Unity in Prayer</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">Riches do not profit in the day of wrath...</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">
+							Spotlight on Engineering: Potential Program Concentrations for
+							Students
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">Stress-Free Tips for Exam Prep</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">
+							College Student Grief Awareness Day: Tips for Juggling Grief with
+							Student Life
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Connections: Making New Friends at College</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">
+							The Parable of the Talents: The Importance of Cultivating
+							God&apos;s Blessings
+						</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">A Choir for Christ and Country</div>
+					</div>
+					<div class="media-box higher-education">
+						<div class="title">
+							Annual Dr. Byron I. Bitar Memorial Lecture in Philosophy
+						</div>
+					</div>
+					<div class="media-box the-college">
+						<div class="title">Tuition Freedom Day</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">He who has a slack hand becomes poor...</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">How to Find the Perfect Summer Internship</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							Jockeying for Your Place on Campus If You&#8217;re Not a Jock
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">
+							Don&#8217;t Be a Statistic &#8212; Protect Yourself from Seasonal
+							Influenza
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">Spring Fever</div>
+					</div>
+					<div class="media-box college-preparation">
+						<div class="title">
+							Critical Questions to Ask College Coaches Before Joining a Sports
+							Team
+						</div>
+					</div>
+					<div class="media-box higher-education">
+						<div class="title">
+							Academic Minors: The Little Brother of a College Education
+						</div>
+					</div>
+					<div class="media-box higher-education">
+						<div class="title">Do Nurses Need a BSN?</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							Unpredictable Weather: Be Prepared and Keep Your Chin Up!
+						</div>
+					</div>
+					<div class="media-box continuing-education">
+						<div class="title">Courage to Conquer Grad School</div>
+					</div>
+					<div class="media-box continuing-education">
+						<div class="title">
+							6 Things You Need to Know About Obtaining an Advanced Degree
+						</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">
+							Why Choosing a Counseling Program with CACREP Accreditation is So
+							Important
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">
+							Go Forth and Witness in Fresh Ways on Innovation Day
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">The Best Valentine&#8217;s Day Ever</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">How Faith Is Nurtured at Geneva College</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Justice Week 2018: Encountering Refugees</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">Avoid the Flu - How to Protect and Prepare</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							Geneva Men&#8217;s Volleyball: A New Beginning
+						</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">
+							Social Work and Children: Employing a Faith-Based Approach
+						</div>
+					</div>
+					<div class="media-box adult-students">
+						<div class="title">Military-Friendly Christ-Filled Education</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							Learning to Live with a Troublesome Roommate
+						</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">
+							Meeting the High Demand for Skilled Nurses: Geneva&apos;s New
+							4-Year Program
+						</div>
+					</div>
+					<div class="media-box higher-education">
+						<div class="title">
+							A Message to Juniors: Well done &#8211; keep going!
+						</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">
+							Faith Unashamed: How to Keep Your Convictions Strong In Difficult
+							Circumstances
+						</div>
+					</div>
+					<div class="media-box study-abroad">
+						<div class="title">
+							How to Survive Your 1st Month of Study Abroad
+						</div>
+					</div>
+					<div class="media-box the-college">
+						<div class="title">Distinguished Geneva Alumni Honored</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							He who is often rebuked, and hardens his neck...
+						</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">7 Ways to Spread Joy Over Christmas Break</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">
+							Ditch the Resolution Laundry List; Commit to One Meaningful Change
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">Christmas Contentment</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">
+							The Most Wonderful Time of the Year! Or Is It?
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">
+							Reflections: Walking into New Beginnings in 2018
+						</div>
+					</div>
+					<div class="media-box higher-education">
+						<div class="title">
+							Geneva Engineering Students See Water Filtration in Action
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">A New Ingredient in Geneva Food Service</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">The wicked flee when no one pursues...</div>
+					</div>
+					<div class="media-box graduate-studies">
+						<div class="title">
+							The Caring Place &#8211; Childhood Grief Awareness Day
+						</div>
+					</div>
+					<div class="media-box adult-students">
+						<div class="title">
+							Considering a Spring Enrollment? Four Questions to Ponder Before
+							You Commit
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">Shop &apos;til You Drop</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							10 Ways to Give Thanks if You Can&apos;t Get Home for Thanksgiving
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							Reading Others: Are You Building Up or Tearing Down?
+						</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">
+							Unlimited Career Opportunities with a Computer Information Systems
+							Degree from Geneva
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">The Five Best Things about Residence Life</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							The Notebook: Finding Your Love at Geneva College
+						</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">
+							Appreciating Your Freedoms on World Freedom Day
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">Why giving blood gives back</div>
+					</div>
+					<div class="media-box college-admissions">
+						<div class="title">
+							More College Affordability with New Grants &amp; Scholarships
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">Do not boast about tomorrow...</div>
+					</div>
+					<div class="media-box college-admissions">
+						<div class="title">
+							First-Generation College Students: Research, Apply, Accept,
+							Enroll!
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">4 Maxims to Live by in College</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							5 Ways to Impact Future Generations with Your Christian Faith and
+							Higher Education Degree
+						</div>
+					</div>
+					<div class="media-box higher-education">
+						<div class="title">In Praise of Challenging Academics</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							Celebrating a Biblically Based Conflict Resolution Day
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">Lonely</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">Five Great Sports Movies for Motivation</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">Honor is not fitting in a fool</div>
+					</div>
+					<div class="media-box adult-students">
+						<div class="title">
+							Finding Financial Aid after Starting Your Degree
+						</div>
+					</div>
+					<div class="media-box adult-students">
+						<div class="title">
+							Getting the Back to School Bug? Flexibility and Affordability Are
+							Yours for the Taking
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Avoiding the &#8220;Sophomore Slump&#8221;</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">
+							Help the World, Help Yourself: A Career in Criminal Justice
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							Looking Back on Senior Year: Some Advice for Seniors
+						</div>
+					</div>
+					<div class="media-box college-preparation">
+						<div class="title">
+							A Student&apos;s Experience in Geneva&apos;s L&amp;T
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">Do not be envious of evil men...</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">Grief: Hope Through Faith</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">
+							On What Should a Christian College Be Grounded?
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							Welcome Back! 5 Tips for a Successful Semester
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							Biblical Worldview: How Do You Interact with Millennials Who Lack
+							One?
+						</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">Celebrating Flight on National Aviation Day</div>
+					</div>
+					<div class="media-box humanities-and-liberal-arts">
+						<div class="title">My Favorite Class at Geneva College</div>
+					</div>
+					<div class="media-box study-abroad">
+						<div class="title">7 Reasons Why You Should Study Abroad</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">Running through Life with Thankfulness</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">When you sit down to eat with a ruler...</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Tips For Student-Athletes</div>
+					</div>
+					<div class="media-box college-preparation">
+						<div class="title">How to Get the Advantages of a Campus Visit</div>
+					</div>
+					<div class="media-box college-preparation">
+						<div class="title">Which Degree Fits You?</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">
+							Pursuing a Christian Vision of a Flourishing Earth
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							Where Passion and Honor Collide: The Role of Respect in Geriatrics
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Graceful Transitions for Transfer Students</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">
+							Can you be a Christian in College and Not Go to Church
+						</div>
+					</div>
+					<div class="media-box program-spotlight">
+						<div class="title">
+							Human Services - Coursework that Changes Lives
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">A good name is to be chosen...</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">3 Ways to Grow Your Faith at College</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">5 C.S. Lewis Quotes that Really Hit Home</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">
+							June 23: A Special Day to Let Go and Let God
+						</div>
+					</div>
+					<div class="media-box study-abroad">
+						<div class="title">
+							Does Autumn in Paris Appeal? Study Abroad This Fall
+						</div>
+					</div>
+					<div class="media-box college-preparation">
+						<div class="title">
+							Studying with Faithful Obedience at another Denomination&#8217;s
+							School
+						</div>
+					</div>
+					<div class="media-box higher-education">
+						<div class="title">
+							Here&apos;s the biggest reason liberal arts still matter
+						</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">5 Tips for Conducting an Interview</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">
+							Something to Look Up to, Look Forward to, and Chase
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							Restoring Our Vital Connection to Nature on World Environment Day
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">The King&#8217;s Heart...</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							Moving and Motivating on National Senior Health and Fitness Day
+						</div>
+					</div>
+					<div class="media-box adult-students">
+						<div class="title">
+							I&#8217;m not a Christian. Why should I complete my
+							bachelor&#8217;s degree from a Christian college?
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							A Practical Perspective from a Workaday Scientist
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">Making a Memorable Mark on Notebook Day</div>
+					</div>
+					<div class="media-box career">
+						<div class="title">
+							Life after College: Finding Your Way in a Post-Graduation World
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							Building Bridges Between Generations on Join Hands Day
+						</div>
+					</div>
+					<div class="media-box higher-education">
+						<div class="title">What It Means to Be a Liberal Arts Student</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">Wine is a mocker...</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">10 Amazing Quotes for Inspiration</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">Six Tips to A Winning Resume</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							What Makes College a Journey: The Ever-Changing Semester
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Ten Remarkable Facts About Our Planet</div>
+					</div>
+					<div class="media-box the-college">
+						<div class="title">Happy 169th Birthday, Geneva!</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Finish Strong</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">
+							Embrace New Life at Easter with a New Mindset
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Good Coffee / Bad Coffee</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							FOMO in College: What it Is and How to Avoid It
+						</div>
+					</div>
+					<div class="media-box higher-education">
+						<div class="title">
+							Why Everyone Should Take a Public Speaking Course
+						</div>
+					</div>
+					<div class="media-box everyday-living">
+						<div class="title">
+							Five Ways You Can Conserve Water on World Water Day
+						</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">The Meaning of Calling</div>
+					</div>
+					<div class="media-box college-preparation">
+						<div class="title">
+							College Preparation Cheat Sheet: Essential Steps for High School
+							Students
+						</div>
+					</div>
+					<div class="media-box the-college">
+						<div class="title">
+							Did You Know? Five Fun Facts about Geneva&#8217;s History
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Do I really have to sleep in college?</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							6 Books To Add To Your List For Reading Awareness Month
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							One in Five: The Campaign to Change Mental Health
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							Proverbs 19:1 &#8211; Better is the poor man who walks in his
+							integrity...
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							Top 5 Faith-Based Movies Streaming On Netflix Right Now
+						</div>
+					</div>
+					<div class="media-box adult-students">
+						<div class="title">
+							Undecided? How Adult College Students Can Choose the Right Course
+							of Study
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">Job Fairs near You!</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">5 Christian Education Myths That Need To Go</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							5 Wonderful Ways to Serve the Community during Spring Break
+						</div>
+					</div>
+					<div class="media-box graduate-studies">
+						<div class="title">Why Should You Earn a MBA Degree?</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">Red Roses, Rocky Road, and Relationships</div>
+					</div>
+					<div class="media-box graduate-studies">
+						<div class="title">
+							What Made George Washington Such a Great Leader
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">Job Scamming</div>
+					</div>
+					<div class="media-box adult-students">
+						<div class="title">What you need to know about SARA</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">Tips for Keeping a Healthy Heart</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">A Man Who Isolates Himself...</div>
+					</div>
+					<div class="media-box college-admissions">
+						<div class="title">
+							Program Spotlight: Bachelor of Professional Studies in Christian
+							Ministry Leadership
+						</div>
+					</div>
+					<div class="media-box college-preparation">
+						<div class="title">
+							5 Keys to Building Stronger Friendships In Adulthood
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							Useful Strategies For Sticking to Your Goals
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							Why Reflection is the Cornerstone of Spiritual Growth
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">The Commuter Hunt</div>
+					</div>
+					<div class="media-box adult-students">
+						<div class="title">Aging Is in Your Future</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">January Events You Don&#8217;t Want to Miss</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">The Value of a Counter-Cultural Education</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">Better Is a Dry Morsel with Quiet...</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							How Geneva Prepares English Majors for Success
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							Celebrate Cherished Christmas Traditions While Creating 10 New
+							Ones of Your Own
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">10 Most Popular Christmas Movies</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">A Winter Break Checklist</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">How to Get the Most Out of School Breaks</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">God Is Bigger Than Your Final Exams</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							5 More Off-Campus Things to Do at Geneva College
+						</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">Contentment in the Waiting</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							Make 2017 a Year-Long Random Act of Kindness
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							Why Just About Everyone Should Get a Flu Vaccination
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							The Preparations of the Heart Belong to Man...
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">5 Off-Campus Things to Do at Geneva College</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							Why Christians Are Called to Volunteer During the Holiday Season
+						</div>
+					</div>
+					<div class="media-box graduate-studies">
+						<div class="title">
+							5 Sure-Fire Tips to Keep Motivation Strong in Grad School
+						</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">
+							Forgiveness and Faith: How Forgiving Others and Yourself Can
+							Improve Your Life
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							Spotlight On Criminal Justice: Why Seek a Criminal Justice Degree?
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">Your Body Is a Temple</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Geneva College: Beautiful Campus</div>
+					</div>
+					<div class="media-box the-college">
+						<div class="title">Taking Care of Veterans</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">Reconciliation</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">(De)voting or Devoting</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">Saving Time</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Distinctive Learning at Geneva and Beyond</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">A Soft Word Turns Away Wrath...</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							The Need for Jesus (Part 4): The Second Adam
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							Winter Entertainment: What To Do When Cold Weather Hits Beaver
+							Falls
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							The Need for Jesus (Part 3): Both King and Lamb
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							STEM Major Consideration: Reasons To Pursue an Education and
+							Career in STEM
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">How Ought Christians to Use Free Speech?</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							The Need for Jesus (Part 2): More than Just Another David
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							Revitalization Techniques: How to Improve Your Mood and Your
+							Mindset
+						</div>
+					</div>
+					<div class="media-box the-college">
+						<div class="title">Afraid of the Radio</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">The Need for Jesus (Part 1)</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">
+							Find Your Ideal Ministry Program on Major Exploration Day
+						</div>
+					</div>
+					<div class="media-box the-college">
+						<div class="title">
+							Realizations at Geneva&#8217;s Presidential Inauguration
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">The Wise Woman Builds Her House...</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">Today Is A Gift</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">
+							How to Strengthen Your Relationship With God By Choosing the Right
+							Church
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">
+							A Wise Son Heeds His Father&apos;s Instructions...
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Dorm Delicacies</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							Academic Success Coaches: Faith-Based Support At Geneva College
+						</div>
+					</div>
+					<div class="media-box humanities-and-liberal-arts">
+						<div class="title">In the Culture, Not of the Culture</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							5 Unexpected Benefits of Attending Geneva College
+						</div>
+					</div>
+					<div class="media-box biblical-wisdom">
+						<div class="title">What Is the Gospel?</div>
+					</div>
+					<div class="media-box graduate-studies">
+						<div class="title">Geneva College: No Need For The GRE</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Staying Healthy in College</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Hack Your College Life</div>
+					</div>
+					<div class="media-box the-college">
+						<div class="title">Looking Back at Geneva&#8217;s Presidents</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Count Your Pennies!</div>
+					</div>
+					<div class="media-box early-college">
+						<div class="title">
+							The Freshman Checklist of &quot;Must-Do&quot;s
+						</div>
+					</div>
+					<div class="media-box early-college">
+						<div class="title">10 Tips for the First Week of College</div>
+					</div>
+					<div class="media-box humanities-and-liberal-arts">
+						<div class="title">Father, Where Is the Lamb?</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Cheers for Cloudy Days!</div>
+					</div>
+					<div class="media-box adult-students">
+						<div class="title">
+							Returning to School: Seek Inspiration From Athletes
+						</div>
+					</div>
+					<div class="media-box early-college">
+						<div class="title">
+							4 Tips For Transitioning From Homeschooling to College
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							How does being a Christian Athlete change the game?
+						</div>
+					</div>
+					<div class="media-box graduate-studies">
+						<div class="title">The Art of Listening</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">Theses on Raising Children in the Lord</div>
+					</div>
+					<div class="media-box early-college">
+						<div class="title">
+							Four Things I Wish I had Known While Attending Geneva College
+						</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">
+							Christian Olympians - The Faith They Needed to Persevere
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">A Year at the Art Institute of Pittsburgh</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">What is the Geneva AIP Affiliate Program</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							Pre-Season Tips from One Student Athlete to Another
+						</div>
+					</div>
+					<div class="media-box adult-students">
+						<div class="title">
+							Demands Created by America&apos;s Aging Population
+						</div>
+					</div>
+					<div class="media-box humanities-and-liberal-arts">
+						<div class="title">
+							History Hasn&#8217;t Gone Away; It&#8217;s Just Morphed Into
+							Narcissism
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">What does the commuter life look like?</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							Reaching Your Audience Through Blogging: What to Do and Not to Do
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							Tips for Staying Faithful with Devotions While in College
+						</div>
+					</div>
+					<div class="media-box graduate-studies">
+						<div class="title">Benefits of an Online MBA</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							It&apos;s Time to Make Friends: How to Get to Know Your New
+							College Roommate
+						</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">Can you be rich and be a Christian?</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">Today&#8212;a near miracle</div>
+					</div>
+					<div class="media-box college-preparation">
+						<div class="title">Preparing for College Level Sports</div>
+					</div>
+					<div class="media-box the-college">
+						<div class="title">
+							Old Main, 135 Years at the Heart of Geneva College
+						</div>
+					</div>
+					<div class="media-box college-preparation">
+						<div class="title">Benefits of a Summer Reading List</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">Program Spotlight: Sport Management</div>
+					</div>
+					<div class="media-box college-preparation">
+						<div class="title">
+							It&#8217;s Summer! Prepare Now for Your Freshman Year of College
+						</div>
+					</div>
+					<div class="media-box college-preparation">
+						<div class="title">Will This Anxiety Ever Leave?</div>
+					</div>
+					<div class="media-box president">
+						<div class="title">Geneva Cabinet Through the War Years</div>
+					</div>
+					<div class="media-box adult-students">
+						<div class="title">Myths About Online Learning</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">Program Spotlight: Business/Aviation</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">Geneva Values</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">How to Stay Motivated</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">Resume Must-Haves</div>
+					</div>
+					<div class="media-box financial-aid">
+						<div class="title">How Do I Pay for College?</div>
+					</div>
+					<div class="media-box college-admissions">
+						<div class="title">
+							Geneva College Now a Member of PA TRAC, Providing Even Better
+							Access
+						</div>
+					</div>
+					<div class="media-box continuing-education">
+						<div class="title">The Dreaded Question - What&apos;s Next?</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">Surviving Summer School</div>
+					</div>
+					<div class="media-box president">
+						<div class="title">Four Books to Read</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Society of Women Engineers</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Finding a Local Church</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">5 Productive Things to Do This Summer</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">Sexual Identity</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							4 Essential Tips For Making the Most of a Career Fair
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">Thanking the Parents of Geneva College</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">Celebrate National Kindergarten Day!</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Making the Most of Summer Break</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Community Cultivated in Chapel</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">Geneva College and the Supreme Court</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">Why Attend a Christian College?</div>
+					</div>
+					<div class="media-box college-preparation">
+						<div class="title">
+							A Letter to Future Students from a Current Student
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">How Can You Be a Better Leader?</div>
+					</div>
+					<div class="media-box college-admissions">
+						<div class="title">Pilot Training</div>
+					</div>
+					<div class="media-box continuing-education">
+						<div class="title">Considering Grad School</div>
+					</div>
+					<div class="media-box graduate-studies">
+						<div class="title">Program Spotlight: MA in Higher Education</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">The Importance of Career Fairs</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">What to Do When You Have Nothing to Do</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							The Ultimate Guide to Being Thrifty in College
+						</div>
+					</div>
+					<div class="media-box faith"><div class="title">The Core!</div></div>
+					<div class="media-box uncategorized">
+						<div class="title">Find Your Calling</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">How to Survive Night Class</div>
+					</div>
+					<div class="media-box higher-education">
+						<div class="title">The Benefits of an Internship</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">The Value of Student Leadership</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">
+							Using Christian values to deal with challenging people
+						</div>
+					</div>
+					<div class="media-box president">
+						<div class="title">City House</div>
+					</div>
+					<div class="media-box higher-education">
+						<div class="title">
+							Geneva Moves Forward in the Digital Frontier
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">Celebrate Your Most Memorable Leap Day Ever</div>
+					</div>
+					<div class="media-box college-admissions">
+						<div class="title">2016: A New Year, A New SAT</div>
+					</div>
+					<div class="media-box adult-students">
+						<div class="title">The Apostle Paul, Online Educator</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							Geneva College Receives High Honors for Value, Academic Excellence
+							and Beauty
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Five Reasons for Students to Exercise</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Why Clubs?</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">Patriotism at Geneva</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">Honoring Veterans</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">Program Spotlight: Biomedical Engineering</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">The Meaning of &#8220;Reformed&#8221;</div>
+					</div>
+					<div class="media-box adult-students">
+						<div class="title">
+							Sharpening Your Christ-Centered Negotiation Skills
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							Is College Stressing You Out? Six Tips to Increase Your Resilience
+						</div>
+					</div>
+					<div class="media-box college-preparation">
+						<div class="title">Good Professors are Childlike</div>
+					</div>
+					<div class="media-box study-abroad">
+						<div class="title">
+							A Snapshot of Scotland: A Geneva Student&#8217;s Experiences
+							Abroad
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">What Seniors Should Be Doing This Semester</div>
+					</div>
+					<div class="media-box college-admissions">
+						<div class="title">
+							Benefits of Enrolling in College Courses While in High School
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">Why the World Needs More Women in STEM</div>
+					</div>
+					<div class="media-box higher-education">
+						<div class="title">
+							Making the Most of Time with Your Professors
+						</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">The Church That Sponsors Geneva</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							A Closer Look: Exceeding Expectations Award for Geneva
+						</div>
+					</div>
+					<div class="media-box graduate-studies">
+						<div class="title">Program Spotlight: M.A. in Counseling</div>
+					</div>
+					<div class="media-box president">
+						<div class="title">Geneva&apos;s Honors Program</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">From a Number to a Name</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							Being an International Student at Geneva College
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							Career Development through Your College Years
+						</div>
+					</div>
+					<div class="media-box study-abroad">
+						<div class="title">
+							There &amp; Back Again: Adjusting to Home after a Semester Abroad
+						</div>
+					</div>
+					<div class="media-box financial-aid">
+						<div class="title">
+							5 Financial Tips Every College Student Should Know
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">How to Benefit from Volunteering</div>
+					</div>
+					<div class="media-box higher-education">
+						<div class="title">Impact of Geneva Professors</div>
+					</div>
+					<div class="media-box higher-education">
+						<div class="title">Confessions of a Transfer Student</div>
+					</div>
+					<div class="media-box adult-students">
+						<div class="title">Program Spotlight: Human Services Degree</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">Preparing for the Professional World</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">Making the Most of Christmas Break</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							Top TED Talks to Listen to Over Winter Break
+						</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">Geneva Invites Non-Christians to Attend</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Do Your Best: Last-Minute Study Tips</div>
+					</div>
+					<div class="media-box college-preparation">
+						<div class="title">
+							A Transfer&#8217;s Reasons for Why You Should Transfer to Geneva
+						</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">
+							Geneva&#8217;s Crucial Department &#8211; Bible
+						</div>
+					</div>
+					<div class="media-box higher-education">
+						<div class="title">
+							Use Social Media Effectively to Secure Your Next Job
+						</div>
+					</div>
+					<div class="media-box higher-education">
+						<div class="title">
+							Finals Survival Checklist: Geneva College Edition
+						</div>
+					</div>
+					<div class="media-box higher-education">
+						<div class="title">
+							Finishing Strong&#8212; The Best Two Weeks of the Year
+						</div>
+					</div>
+					<div class="media-box college-preparation">
+						<div class="title">It&#8217;s Okay to be Undecided</div>
+					</div>
+					<div class="media-box study-abroad">
+						<div class="title">
+							Five Ways America Changed While I Studied Abroad
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">Loving Winter in Pittsburgh</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							Top 7 Apps for College Students &#8211; or Those Getting Ready for
+							College
+						</div>
+					</div>
+					<div class="media-box higher-education">
+						<div class="title">How to Focus</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Top Six Places to Study at Geneva</div>
+					</div>
+					<div class="media-box higher-education">
+						<div class="title">The Power of an Internship</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">
+							Top 10 Reasons International Students Consider Geneva
+						</div>
+					</div>
+					<div class="media-box graduate-studies">
+						<div class="title">
+							Been Working for a While? Now May Be the Best Time to Get a
+							Graduate Degree
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							Six Things Every Geneva Student Should Do Before Graduation
+						</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">Where to Get Help for Depression</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">All About Veterans Day</div>
+					</div>
+					<div class="media-box college-preparation">
+						<div class="title">Time to Switch Schools?</div>
+					</div>
+					<div class="media-box president">
+						<div class="title">High Art in McCartney Library</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							6 Fun Things Happening in Beaver County This November
+						</div>
+					</div>
+					<div class="media-box study-abroad">
+						<div class="title">How to Make the Most of Studying Abroad</div>
+					</div>
+					<div class="media-box uncategorized">
+						<div class="title">Service-Work Projects</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Getting Along with Your Freshman Roommate</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">How Geneva Students Eat Out on a Budget</div>
+					</div>
+					<div class="media-box financial-aid">
+						<div class="title">
+							Is College Worth the Expense? An Authentic Story
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Study Tips for College Students</div>
+					</div>
+					<div class="media-box president">
+						<div class="title">Engineering: Still the Most Powerful</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Fun Facts about Pennsylvania</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							Four Steps to Commuting and Feeling Connected
+						</div>
+					</div>
+					<div class="media-box adult-students">
+						<div class="title">Managing Study Time for a Working Adult</div>
+					</div>
+					<div class="media-box college-preparation">
+						<div class="title">Choosing Your College Major</div>
+					</div>
+					<div class="media-box adult-students">
+						<div class="title">
+							Family Fundamentals: A Degree In Child And Family Services
+						</div>
+					</div>
+					<div class="media-box higher-education">
+						<div class="title">30 Top Christian Colleges</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">Two Questions</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">Pastor Appreciation Month</div>
+					</div>
+					<div class="media-box study-abroad">
+						<div class="title">
+							Why, When Possible, You Should Travel &#8211; and Study! &#8211;
+							Overseas
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Five Easy Ways to Rest and Refocus</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">The Open Bible</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Why I Love My Small Campus</div>
+					</div>
+					<div class="media-box president">
+						<div class="title">Athletics, Music, and the Performing Arts</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							Why Geneva College is the Best Place to Get Your Education
+						</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">Things to Do When You Arrive on Campus</div>
+					</div>
+					<div class="media-box faith">
+						<div class="title">College Motto</div>
+					</div>
+					<div class="media-box adult-students">
+						<div class="title">National Self Improvement Month</div>
+					</div>
+					<div class="media-box college-preparation">
+						<div class="title">Things to do before you arrive on campus</div>
+					</div>
+					<div class="media-box adult-students">
+						<div class="title">Why You Need a Degree in Human Resources</div>
+					</div>
+					<div class="media-box president">
+						<div class="title">Professional Fields</div>
+					</div>
+					<div class="media-box study-abroad">
+						<div class="title">
+							Santo Stefano Rotondo: An Intriguing Church in Rome
+						</div>
+					</div>
+					<div class="media-box adult-students">
+						<div class="title">
+							Earning a Degree Just Got Easier and More Affordable
+						</div>
+					</div>
+					<div class="media-box college-preparation">
+						<div class="title">
+							Five Things You Will Definitely Need In Your Dorm Room (and Some
+							Things You Won&#8217;t)
+						</div>
+					</div>
+					<div class="media-box president">
+						<div class="title">Liberal Arts</div>
+					</div>
+					<div class="media-box campus-life">
+						<div class="title">
+							Making the Most of Your First Semester in College
+						</div>
+					</div>
+					<!-- <div class="media-box uncategorized">
+						<div class="title">Blog Posts JSON</div>
+					</div> -->
+				</div>
+
+				<!-- <code id="output"></code> -->
+			</div>
+			<!-- #grid-container -->
+		</div>
+
+		<!-- jQuery 1.8+ -->
+		<script src="../plugins/components/jQuery/jquery-3.6.0.min.js"></script>
+
+		<!-- Media Boxes JS files -->
+		<script src="../plugins/components/Isotope/jquery.isotope.min.js"></script>
+		<script src="../plugins/components/imagesLoaded/jquery.imagesLoaded.min.js"></script>
+		<script src="../plugins/components/Transit/jquery.transit.min.js"></script>
+		<script src="../plugins/components/jQuery Easing/jquery.easing.js"></script>
+		<script src="../plugins/components/jQuery Visible/jquery.visible.min.js"></script>
+		<script src="../plugins/components/Modernizr/modernizr.custom.min.js"></script>
+		<script src="../plugins/components/Magnific Popup/jquery.magnific-popup.min.js"></script>
+		<script src="../plugins/js/jquery.mediaBoxes.dropdown.js"></script>
+		<script src="../plugins/js/jquery.mediaBoxes.js"></script>
+
+		<script>
+			$("#grid").mediaBoxes({
+				filterContainer: ".filters",
+				search: "#search",
+				boxesToLoadStart: 20,
+				boxesToLoad: 50,
+				columns: 3,
+				searchTarget: ".title",
+				popup: "magnificpopup",
+			});
+		</script>
+
+		<!-- Bootstrap JS file -->
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+
+		<script src="js/my-script.js"></script>
+	</body>
+</html>

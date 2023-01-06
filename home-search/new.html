@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Local Template</title>
+
+    <!-- CSS =================================================== -->
+
+    <script
+      crossorigin="anonymous"
+      src="https://kit.fontawesome.com/00b85cf77f.js"
+    ></script>
+
+    <link
+      href="https://dev.geneva.edu/_files/css/normalize.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://dev.geneva.edu/_files/css/main-nav-responsive.css"
+      media="screen"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link
+      href="https://dev.geneva.edu/_files/css/main-nav-pure.css"
+      media="screen"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link
+      href="https://dev.geneva.edu/_files/css/jquery.mmenu.all.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link
+      href="https://dev.geneva.edu/_files/css/jquery.jscrollpane.css"
+      media="all"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link
+      href="https://dev.geneva.edu/_files/css/geneva-main-newbrand.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://dev.geneva.edu/_files/css/skeleton-newbrand.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://dev.geneva.edu/_files/css/stories-gallery-styles.css"
+      rel="stylesheet"
+    />
+
+    <!-- Latest jQuery direct from google's CDN Keep // for secure https links-->
+
+    <script
+      src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"
+      type="text/javascript"
+    ></script>
+
+    <style>
+      #program-preview-container {
+        /* Background */
+        background-color: #c99a2c;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='250' preserveAspectRatio='none' viewBox='0 0 1440 250'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1006%26quot%3b)' fill='none'%3e%3cpath d='M25 250L275 0L441.5 0L191.5 250z' fill='url(%23SvgjsLinearGradient1007)'%3e%3c/path%3e%3cpath d='M278.6 250L528.6 0L597.6 0L347.6 250z' fill='url(%23SvgjsLinearGradient1007)'%3e%3c/path%3e%3cpath d='M489.20000000000005 250L739.2 0L1036.2 0L786.2 250z' fill='url(%23SvgjsLinearGradient1007)'%3e%3c/path%3e%3cpath d='M746.8000000000001 250L996.8000000000001 0L1145.3000000000002 0L895.3000000000001 250z' fill='url(%23SvgjsLinearGradient1007)'%3e%3c/path%3e%3cpath d='M1397 250L1147 0L820 0L1070 250z' fill='url(%23SvgjsLinearGradient1008)'%3e%3c/path%3e%3cpath d='M1168.4 250L918.4000000000001 0L834.4000000000001 0L1084.4 250z' fill='url(%23SvgjsLinearGradient1008)'%3e%3c/path%3e%3cpath d='M940.8 250L690.8 0L630.8 0L880.8 250z' fill='url(%23SvgjsLinearGradient1008)'%3e%3c/path%3e%3cpath d='M720.1999999999999 250L470.19999999999993 0L245.19999999999993 0L495.19999999999993 250z' fill='url(%23SvgjsLinearGradient1008)'%3e%3c/path%3e%3cpath d='M1196.0063261130565 250L1440 6.006326113056588L1440 250z' fill='url(%23SvgjsLinearGradient1007)'%3e%3c/path%3e%3cpath d='M0 250L243.9936738869434 250L 0 6.006326113056588z' fill='url(%23SvgjsLinearGradient1008)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1006'%3e%3crect width='1440' height='250' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='0%25' y1='100%25' x2='100%25' y2='0%25' id='SvgjsLinearGradient1007'%3e%3cstop stop-color='rgba(53%2c 53%2c 53%2c 0.12549019607843137)' offset='0'%3e%3c/stop%3e%3cstop stop-opacity='0' stop-color='rgba(53%2c 53%2c 53%2c 0.12549019607843137)' offset='0.66'%3e%3c/stop%3e%3c/linearGradient%3e%3clinearGradient x1='100%25' y1='100%25' x2='0%25' y2='0%25' id='SvgjsLinearGradient1008'%3e%3cstop stop-color='rgba(53%2c 53%2c 53%2c 0.12549019607843137)' offset='0'%3e%3c/stop%3e%3cstop stop-opacity='0' stop-color='rgba(53%2c 53%2c 53%2c 0.12549019607843137)' offset='0.66'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
+        background-size: cover;
+
+        /* Dimensions */
+        width: 100%;
+        padding: 50px 0 0 0;
+        margin: 50px 0;
+      }
+
+      #program-preview-title {
+        /* Font */
+        font-size: 35px;
+        color: #353535;
+
+        /* Spacing */
+        margin-bottom: 45px;
+      }
+
+      #program-preview-margin {
+        /* Horizontal Centering */
+        margin: 0 auto;
+      }
+
+      #program-preview-input {
+        /* Border */
+        border: 5px solid #a57f25;
+        border-radius: 10px;
+
+        /* Colors */
+        background-color: #fff;
+
+        /* Display */
+        display: flex;
+
+        /* Spacing */
+        padding: 15px;
+        box-sizing: border-box;
+
+        /* Transition */
+        transition: all 250ms ease-in-out;
+      }
+
+      #program-preview-input input {
+        /* Border */
+        border: none;
+
+        /* Dimensions */
+        height: 35px;
+        width: 100%;
+
+        /* Font */
+        font-size: 25px;
+        font-family: 'Poppins';
+        color: rgb(126, 126, 126);
+      }
+
+      #program-preview-input input:focus {
+        /* Border */
+        outline: none;
+      }
+
+      #program-preview-header {
+        font-size: 35px;
+        color: #3d3935;
+        margin: 50px 0;
+        line-height: 50px;
+        text-align: center;
+        font-family: 'Vollkorn';
+        font-weight: bold;
+        font-style: italic;
+      }
+
+      #program-preview-header a {
+        color: #3d3935;
+        text-decoration: none;
+        margin: 0 3px;
+      }
+
+      #program-preview-header .program-preview-header-underline {
+        position: relative;
+        z-index: 10;
+        display: inline-block;
+        transition: all 250ms ease-in-out;
+      }
+
+      #program-preview-header .program-preview-header-underline:hover {
+        color: #fff;
+      }
+
+      #program-preview-header .program-preview-header-underline:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 7px;
+        display: inline-block;
+        height: 10px;
+        width: 100%;
+        background-color: rgb(253 217 0 / 70%);
+        z-index: -10;
+      }
+
+      #program-preview-search-icon {
+        /* Font */
+        font-size: 30px;
+        color: #666;
+
+        /* Spacing */
+        margin-right: 10px;
+        padding-top: 3px;
+      }
+
+      #program-preview-clear-icon {
+        /* Cursor */
+        cursor: pointer;
+
+        /* Font */
+        font-size: 30px;
+        color: rgb(126, 126, 126);
+
+        /* Spacing */
+        padding-top: 3px;
+
+        /* Transition */
+        transition: all 250ms ease-in-out;
+      }
+
+      #program-preview-clear-icon:hover {
+        /* Font */
+        color: #353535;
+      }
+
+      #program-preview-output {
+        /* Format list */
+        list-style-type: none;
+        column-count: 2;
+
+        /* Spacing */
+        padding: 0 10px;
+      }
+
+      #program-preview-output li {
+        /* Font */
+        font-size: 20px;
+        line-height: 27px;
+
+        /* Spacing */
+        padding: 15px 0;
+      }
+
+      #program-preview-output li a {
+        /* Font */
+        font-weight: bold;
+        color: #353535;
+        text-decoration: none;
+
+        /* Position */
+        position: relative;
+
+        /* Transition */
+        transition: all 250ms ease-in-out;
+      }
+
+      #program-preview-output li a:hover {
+        /* Font */
+        color: #fff;
+      }
+
+      #program-preview-output li a:after {
+        /* Colors */
+        background-color: #fdd900;
+
+        /* Content */
+        content: '';
+
+        /* Dimensions */
+        width: 100%;
+        height: 3px;
+
+        /* Display */
+        transform: scaleX(0);
+        transform-origin: bottom left;
+
+        /* Position */
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+
+        /* Transition */
+        transition: transform 0.3s;
+      }
+
+      #program-preview-output li a:hover:after {
+        /* Display */
+        transform: scaleX(1);
+      }
+
+      #program-preview-output li a:hover .fa-book-bookmark {
+        /* Display */
+        visibility: visible;
+
+        /* Font */
+        color: #fdd900;
+      }
+
+      #program-preview-output li a .fa-book-bookmark {
+        /* Display */
+        visibility: hidden;
+
+        /* Font */
+        color: #a57f25;
+
+        /* Position */
+        margin-right: 3px;
+
+        /* Transition */
+        transition: all 250ms ease-in-out;
+
+        max-width: 1275px;
+      }
+
+      #program-preview-featured-programs ul {
+        /* Format list */
+        list-style-type: none;
+        /* column-count: 4; */
+
+        padding: 0;
+        justify-content: space-between;
+
+        padding: 25px;
+        margin: 0;
+      }
+
+      #program-preview-featured-programs li {
+        /* Dimensions */
+        flex-basis: 23%;
+        border: 3px solid #fdd900;
+        border-radius: 7px;
+        transition: all 250ms ease-in-out;
+        margin-bottom: 15px;
+      }
+
+      #program-preview-featured-programs li:hover {
+        background-color: #ffd700;
+      }
+
+      #program-preview-featured-programs li:hover .fa-file-certificate {
+        color: #c99a2c;
+      }
+
+      #program-preview-featured-programs li a {
+        /* Display */
+        display: flex;
+
+        /* Font */
+        font-weight: bold;
+        color: #353535;
+        text-decoration: none;
+
+        align-items: center;
+        padding: 13px;
+        line-height: 22px;
+      }
+
+      #program-preview-featured-programs li a .fa-file-certificate {
+        /* Font */
+        font-size: 25px;
+
+        /* Position */
+        margin-right: 10px;
+
+        color: #ffd700;
+      }
+
+      .program-preview-feature-content {
+        margin: auto;
+        display: flex;
+        height: 100%;
+      }
+
+      .section h2.headerline {
+        font-size: 40px;
+        line-height: 50px;
+        margin-top: 18px;
+      }
+
+      .section h2.headerline:after {
+        background-color: #fdd900;
+      }
+
+      @media (min-width: 920px) {
+        #program-preview-featured-programs ul {
+          display: flex;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="program-preview-container" class="section">
+      <div class="container">
+        <h2 class="headerline">Find Your Program</h2>
+        <div id="program-preview-input">
+          <div id="program-preview-search-icon">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <input placeholder="Search by Keyword" type="text" />
+          <i class="fa-solid fa-x" id="program-preview-clear-icon"></i>
+        </div>
+        <ul id="program-preview-output"></ul>
+        <p id="program-preview-header">
+          Geneva offers over 80 degree programs from
+          <a href="https://geneva.edu/" class="program-preview-header-underline"
+            >traditional undergraduate programs</a
+          >,
+          <a href="https://geneva.edu/" class="program-preview-header-underline"
+            >online degree programs</a
+          >, and an array of high-demand
+          <a href="https://geneva.edu/" class="program-preview-header-underline"
+            >graduate degrees</a
+          >
+          in both classroom and online formats.
+        </p>
+      </div>
+      <div id="program-preview-featured-programs">
+        <ul>
+          <li>
+            <div class="program-preview-feature-content">
+              <a href="https://geneva.edu/">
+                <i class="fa-light fa-file-certificate"></i>
+                <span>Biblical Studies</span>
+              </a>
+            </div>
+          </li>
+          <li>
+            <div class="program-preview-feature-content">
+              <a href="https://geneva.edu/">
+                <i class="fa-light fa-file-certificate"></i>
+                <span>Computer Engineering and Solitary Web Development</span>
+              </a>
+            </div>
+          </li>
+          <li>
+            <div class="program-preview-feature-content">
+              <a href="https://geneva.edu/">
+                <i class="fa-light fa-file-certificate"></i>
+                <span>Cybersecurity</span>
+              </a>
+            </div>
+          </li>
+          <li>
+            <div class="program-preview-feature-content">
+              <a href="https://geneva.edu/">
+                <i class="fa-light fa-file-certificate"></i>
+                <span>Engineering</span>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      var data;
+
+      function filterData() {
+        const input = $('#program-preview-input input').val();
+
+        if (input.length > 0) {
+          $('#program-preview-clear-icon').fadeIn(0);
+        } else {
+          $('#program-preview-clear-icon').fadeOut(0);
+        }
+
+        var results = $.grep(data, function (n, i) {
+          return n.title.toLowerCase().includes(input.toLowerCase());
+        });
+
+        if (results.length > 16) {
+          results = results.slice(0, 16);
+        }
+
+        $('#program-preview-output li').remove();
+
+        if (results.length == '') {
+          $('#program-preview-output').append(`
+            <li>
+              <h3>No Results</h3>
+            </li>
+          `);
+        }
+
+        if (input == '') {
+          $('#program-preview-header').fadeIn(0);
+        } else {
+          $('#program-preview-header').fadeOut(0);
+          results.forEach((p) => {
+            $('#program-preview-output').append(`
+            <li>
+              <a href="https://geneva.edu/${p.link}"> ${p.title} </a>
+            </li>
+          `);
+          });
+        }
+      }
+
+      $(document).ready(() => {
+        fetch('https://www.geneva.edu/academics/programs/json/programs.json')
+          .then((res) => res.json())
+          .then((initialData) => {
+            data = initialData;
+          });
+
+        $('#program-preview-clear-icon').fadeOut(0);
+
+        $('#program-preview-input input').keyup(function () {
+          filterData();
+        });
+
+        $('#program-preview-input input').focusin(function () {
+          $('#program-preview-input').css('border', '5px solid #fdd900');
+          $('#program-preview-input input').attr('placeholder', '');
+        });
+
+        $('#program-preview-input input').focusout(function () {
+          $('#program-preview-input').css('border', '5px solid #a57f25');
+          $('#program-preview-input input').attr(
+            'placeholder',
+            'Search by Keyword'
+          );
+        });
+
+        $('#program-preview-clear-icon').click(function () {
+          $('#program-preview-input input').val('');
+          filterData();
+        });
+      });
+    </script>
+  </body>
+</html>

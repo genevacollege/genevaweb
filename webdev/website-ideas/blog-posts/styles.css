@@ -1,0 +1,25 @@
+#blog-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+#blog-grid .blog-post {
+  position: relative;
+  margin: 3rem;
+}
+#blog-grid .blog-post .left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 48%;
+}
+#blog-grid .blog-post .right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 48%;
+}
+#blog-grid .blog-post img.thumbnail {
+  width: 100%;
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,68 @@
+#faculty-grid {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: auto auto auto auto;
+  padding: 3rem 7rem;
+}
+
+.faculty-card {
+  position: relative;
+  height: 30vw;
+  width: 100%;
+  overflow: hidden;
+  background-color: #686868;
+}
+.faculty-card .faculty-img {
+  transition: transform 400ms ease-in-out;
+}
+.faculty-card:hover .faculty-img {
+  transform: scale(1.06);
+}
+.faculty-card .faculty-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 65px;
+  width: 100%;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  font-family: "Vollkorn";
+  font-weight: bold;
+  font-size: 30px;
+  font-style: italic;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.faculty-card .faculty-title .name {
+  margin: auto auto auto 15px;
+}
+.faculty-card .faculty-title .badge {
+  position: absolute;
+  bottom: -1px;
+  right: 0;
+  height: 130px;
+  width: 130px;
+  color: #fff;
+  background-color: #ffcc33;
+  -webkit-clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+}
+.faculty-card .faculty-title .badge i.fa-solid {
+  font-size: 50px;
+  margin: 0 12.5px 12.5px 0;
+}
+.faculty-card a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+}
+
+/*# sourceMappingURL=styles.css.map */

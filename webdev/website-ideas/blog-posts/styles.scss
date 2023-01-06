@@ -1,0 +1,27 @@
+#blog-grid {
+	display: grid;
+	grid-template-columns: auto auto auto;
+
+	.blog-post {
+		position: relative;
+		margin: 3rem;
+
+		.left {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 48%;
+		}
+
+		.right {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 48%;
+		}
+
+		img.thumbnail {
+			width: 100%;
+		}
+	}
+}

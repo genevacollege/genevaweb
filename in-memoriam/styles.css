@@ -1,0 +1,39 @@
+@media (min-width: 1100px) {
+  #results-container {
+    grid: auto / 33% 33% 33% !important;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1099px) {
+  #results-container {
+    grid: auto / 50% 50% !important;
+  }
+}
+
+#results-container {
+  display: grid;
+  grid: auto / 100%;
+  /* grid-gap: 10px; */
+}
+
+#results-title {
+  margin-bottom: 0;
+}
+
+#results-disclaimer {
+  font-style: italic;
+  margin: 0 0 30px 0;
+}
+
+.memoriam {
+  padding: 10px;
+  margin-bottom: 0;
+}
+
+#view-alumni,
+#view-friends {
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: -moz-none none;
+  -webkit-user-select: none;
+}
