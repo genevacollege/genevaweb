@@ -172,7 +172,11 @@ $(document).ready(function () {
 
         if (getParam("interest")) {
           $("#filter-interest")
-            .val(reverseObject(interestLegends)[getParam("interest")])
+            .val(() => {
+              return Object.keys(interestLegends).find(
+                (key) => interestLegends[key] === getParam(["interest"])
+              );
+            })
             .change();
         }
 
