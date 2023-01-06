@@ -1,9 +1,8 @@
 // This function only allows the code inside to be triggered when the page is fully loaded.
 $(document).ready(function () {
   // Fetch the JSON output.
-  /*fetch("https://www.geneva.edu/academics/programs/json/programs")*/
-  //fetch("[system-asset:configuration=JSON Output]/academics/programs/json/programs?raw[/system-asset]")
-  fetch("https://www.geneva.edu/academics/programs/json/programs.json")
+  // fetch("https://www.geneva.edu/academics/programs/json/programs.json")
+  fetch("[system-asset]/academics/programs/json/programs?raw[/system-asset]")
     .then((results) => results.json())
     .then((initialData) => {
       // Putting all objects at the beginning so that they can be used wherever they are needed.
@@ -147,8 +146,6 @@ $(document).ready(function () {
             );
           }
 
-          console.log(endList);
-
           return endList.join("");
         }
       }
@@ -173,59 +170,30 @@ $(document).ready(function () {
         }
       }
 
-      // The function that parses the URL into the search bar.
       function urlToSearch() {
-        /*
-          This function is only used inside of the 'urlToSearch' function, and
-          flips the provided JSON object's keys and values so that it can be
-          used properly.
+        const urlParams = new URLSearchParams(window.location.search);
 
-          If it's needed outside of the 'urlToSearch' function, we can move it.
-        */
-        function reverseObject(initialObject) {
-          // 'reversedObject' will be the reversed JSON object we return at the end of the function.
-          var reversedObject = {};
-
-          /*
-            Filters through each key, double checks to make sure the JSON object
-            has a corresponding value, and puts both the key and value into the
-            new object.
-          */
-          for (var prop in initialObject) {
-            if (initialObject.hasOwnProperty(prop)) {
-              reversedObject[initialObject[prop]] = prop;
-            }
+        function getParam(param) {
+          if (urlParams.get(param)) {
+            return urlParams.get(param);
+          } else {
+            return false;
           }
-
-          return reversedObject;
         }
 
-        // This will have a list of each hash in the URL.
-        let values = [];
-
-        // This parses out the hashes from the URL so that we can use them.
-        let hashes = window.location.href
-          .slice(window.location.href.indexOf("?") + 1)
-          .split("&");
-
-        // This loops through the hashes we now have and puts them into the 'values' array.
-        let hash;
-        for (let i = 0; i < hashes.length; i++) {
-          hash = hashes[i].split("=");
-          values.push(hash[0]);
-          values[hash[0]] = hash[1];
+        if (getParam("keyword")) {
+          $("#filter-keyword").val(decodeURIComponent(getParam("keyword")));
         }
 
-        // And last but not least, we apply each hash into the search bar and dropdowns.
-        if (values["keyword"])
-          $("#filter-keyword").val(decodeURIComponent(values["keyword"]));
-        if (values["interest"])
+        if (getParam("interest")) {
           $("#filter-interest")
-            .val(reverseObject(interestLegends)[values["interest"]])
+            .val(reverseObject(interestLegends)[getParam("interest")])
             .change();
-        // if (values['degree']) $('#filter-degree').val(values['degree']).change()
-        if (values["program"])
-          $("#filter-program").val(values["program"]).change();
+        }
+
+        if (getParam("program")) {
+          $("#filter-program").val(getParam("program")).change();
+        }
       }
     });
 });
