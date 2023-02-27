@@ -1,0 +1,53 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#parent-grid {
+  padding: 0 2.5%;
+}
+
+#grid {
+  /* width: 100vw;
+  max-width: 100vw; */
+  /* margin: 10px; */
+  /* box-sizing: border-box; */
+  background-color: salmon;
+}
+
+.item1,
+.item2,
+.item3,
+.item4,
+.item5,
+.item6 {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: calc(100% / 3);
+  box-sizing: border-box;
+}
+
+/* Differing item heights */
+
+.item1 {
+  height: 250px;
+}
+
+.item2 {
+  height: 175px;
+}
+
+.item3 {
+  height: 125px;
+}
+
+.item4 {
+  height: 225px;
+}
+
+.item5 {
+  height: 150px;
+}
+
+.item6 {
+  height: 100px;
+}

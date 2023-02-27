@@ -1,0 +1,82 @@
+/* Grid CSS */
+.grid_container {
+  display: grid;
+  grid-template-columns: auto;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+.grid_item img {
+  max-height: 150px;
+  max-width: 175px !important;
+  margin: auto;
+}
+
+.grid_item {
+  width: auto;
+  height: 150px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#show_more_button {
+  color: #3d3935;
+  background: none !important;
+  border-radius: 0.3em;
+  border: 2px solid #3d3935;
+  font-size: 15px;
+  font-weight: 700;
+  text-shadow: none;
+  transition: background 0.5s;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 20px;
+  cursor: pointer;
+  max-height: 45px;
+}
+#show_more_button:active,
+#show_more_button:visited,
+#show_more_button:focus {
+  color: #3d3935;
+}
+#show_more_button:hover {
+  background: rgb(24 16 0) !important;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.extra {
+  display: none;
+}
+
+.logohead {
+  margin-top: 80px;
+}
+.p-center {
+  text-align: center;
+  font-style: italic;
+}
+
+/* Grid Queries */
+@media (min-width: 500px) {
+  .grid_container {
+    display: grid;
+    gap: 2.5em;
+    grid-template-columns: auto auto;
+    padding: 1em;
+  }
+}
+
+@media (min-width: 800px) {
+  .grid_container {
+    grid-template-columns: auto auto auto;
+  }
+}
+
+@media (min-width: 950px) {
+  .grid_item img {
+    max-width: 200px !important;
+  }
+}

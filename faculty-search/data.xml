@@ -1,0 +1,40 @@
+<system-data-structure>
+  <text help-text="Display profiles by Department" identifier="department-display"
+    label="Department Display" type="multi-selector">
+    <selector-item value="Biblical Studies, Ministry &amp; Philosophy" />
+    <selector-item value="Biology" />
+    <selector-item value="Business" />
+    <selector-item value="Communication" />
+    <selector-item value="Computer Science &amp; Cybersecurity" />
+    <selector-item value="Chemistry, Mathematics &amp; Physics" />
+    <selector-item value="Education" />
+    <selector-item value="Engineering" />
+    <selector-item value="English" />
+    <selector-item value="History, Political Science &amp; Sociology" />
+    <selector-item value="Languages &amp; Culture " />
+    <selector-item value="Music" />
+    <selector-item value="Nursing" />
+    <selector-item value="Physical Education" />
+    <selector-item value="Psychology &amp; Social Services" />
+    <selector-item value="Independent Major" />
+    <selector-item value="Online Degree Programs" />
+    <selector-item value="Online Degree - Aging Services" />
+    <selector-item value="Online Degree - Christian Ministry Leadership" />
+    <selector-item value="Online Degree - Human Resources" />
+    <selector-item value="Online Degree - Human Services" />
+    <selector-item value="Online Degree - Organizational Development" />
+    <selector-item value="Aviation Affiliation Programs" />
+    <selector-item value="MSOL" />
+    <selector-item value="MBA" />
+    <selector-item value="M.S. Cardiovascular Sciences" />
+    <selector-item value="M.A. Counseling" />
+    <selector-item value="M.A. Higher Ed." />
+    <selector-item value="M.S. Leadership Studies" />
+    <selector-item value="M.Ed. Reading " />
+    <selector-item value="M.Ed. Special Education" />
+    <selector-item value="Nursing" />
+    <selector-item value="Early College Program" />
+    <selector-item value="CUBM" />
+    <selector-item value="Library" />
+  </text>
+</system-data-structure>
